@@ -1,3 +1,27 @@
+<?php
+
+$user['male'] = array(
+    'nama' => 'Muhammad Shazwan Danial',
+    'nama_panggilan' => 'Danial',
+    'nama_ayah' => 'Kamaruddin Bin Daud',
+    'nama_ibu' => 'Martiny Binti Makhtar',
+    'alamat' => 'Lot 365, Kampung Desa Rebana, 18500 Machang, Kelantan',
+    'no_hp' => '0192548927',
+    'foto' => 'assets/images/danial.png'
+);
+
+$user['female'] = array(
+    'nama' => 'Siti Nur Akashaf',
+    'nama_panggilan' => 'Akashaf',
+    'nama_ayah' => 'Rafdi',
+    'nama_ibu' => '',
+    'alamat' => 'Lot 90, Jalan Lebur Kala, Kg Manek Urai Baru, 18000 Kuala Krai, Kelantan',
+    'no_hp' => '0192548927',
+    'foto' => 'assets/images/akashaf.png',
+    'google_maps' => 'https://maps.app.goo.gl/dUzT7EBNXXFQBx7g6'
+);
+
+?>
 <!doctype html>
 <html lang="id" data-bs-theme="dark">
 
@@ -5,27 +29,25 @@
     <!-- Common Tag -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Undangan Pernikahan Wahyu & Riski">
-    <meta name="description" content="Website Undangan Pernikahan Wahyu & Riski Secara Online">
+    <meta name="title" content="Wedding Invitations <?= $user['male']['nama'] ?> & <?= $user['female']['nama'] ?>">
+    <meta name="description" content="Website Wedding Invitations <?= $user['male']['nama'] ?> & <?= $user['female']['nama'] ?> Secara Online">
     <meta name="theme-color" content="#212529">
     <meta name="color-scheme" content="dark">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://ulems.my.id/assets/images/icon-192x192.png">
-    <title>Undangan Pernikahan Wahyu & Riski</title>
-
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192x192.png">
+    <title>Wedding Invitations <?= $user['male']['nama'] ?> & <?= $user['female']['nama'] ?></title>
     <!-- SEO Tag -->
-    <meta property="og:title" content="Undangan Pernikahan Wahyu & Riski">
-    <meta property="og:description" content="Website Undangan Pernikahan Wahyu & Riski Secara Online">
-    <meta property="og:image" content="https://ulems.my.id/assets/images/bg.jpeg">
+    <meta property="og:title" content="Wedding Invitations <?= $user['male']['nama'] ?> & <?= $user['female']['nama'] ?>">
+    <meta property="og:description" content="Website Wedding Invitations <?= $user['male']['nama'] ?> & <?= $user['female']['nama'] ?> Secara Online">
+    <meta property="og:image" content="assets/images/bg.jpg">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:alt" content="Undangan Pernikahan Wahyu & Riski">
+    <meta property="og:image:alt" content="Wedding Invitations <?= $user['male']['nama'] ?> & <?= $user['female']['nama'] ?>">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="id_ID">
+    <meta property="og:locale" content="">
     <meta property="og:site_name" content="Undangan">
-    <meta property="og:url" content="https://ulems.my.id/">
+    <meta property="og:url" content="">
 
     <!-- Preconnect CDN -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
-    <link rel="preconnect" href="https://api.ulems.my.id" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://gstatic.com" crossorigin="anonymous">
 
@@ -38,10 +60,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id/" style="overflow-y: hidden;">
+<body style="overflow-y: hidden;">
 
     <!-- Navbar Bottom -->
     <nav class="navbar navbar-dark bg-dark navbar-expand fixed-bottom rounded-top-4 p-0" id="navbar-menus">
@@ -53,27 +75,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#mempelai">
+                <a class="nav-link" href="#bride">
                     <i class="fa-solid fa-user-group"></i>
-                    <span class="d-block" style="font-size: 0.7rem;">Mempelai</span>
+                    <span class="d-block" style="font-size: 0.7rem;">Bride</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#tanggal">
+                <a class="nav-link" href="#date">
                     <i class="fa-solid fa-calendar-check"></i>
-                    <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
+                    <span class="d-block" style="font-size: 0.7rem;">Date</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#galeri">
                     <i class="fa-solid fa-images"></i>
                     <span class="d-block" style="font-size: 0.7rem;">Galeri</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#ucapan">
-                    <i class="fa-solid fa-comments"></i>
-                    <span class="d-block" style="font-size: 0.7rem;">Ucapan</span>
                 </a>
             </li>
         </ul>
@@ -86,18 +102,18 @@
         <section class="container" id="home">
 
             <div class="text-center pt-4">
-                <h1 class="font-esthetic my-4" style="font-size: 2.5rem;">Undangan Pernikahan</h1>
+                <h1 class="font-esthetic my-4" style="font-size: 2.5rem;">Wedding Invitations</h1>
 
                 <div class="py-4">
                     <div class="img-crop border border-3 border-light shadow mx-auto">
-                        <img src="./assets/images/bg.jpeg" alt="bg" onclick="modalFoto(this)">
+                        <img src="./assets/images/bg.jpg" alt="bg" onclick="modalFoto(this)">
                     </div>
                 </div>
 
-                <h1 class="font-esthetic my-4" style="font-size: 3rem;">Wahyu & Riski</h1>
-                <h4>Rabu, 15 Maret 2023</h4>
+                <h1 class="font-esthetic my-4" style="font-size: 3rem;"><?= $user['male']['nama_panggilan'] ?> & <?= $user['female']['nama_panggilan'] ?></h1>
+                <h4><?= date('l, d F Y') ?></h4>
 
-                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Wahyu%20and%20Riski&details=The%20Wedding%20of%20Wahyu%20and%20Riski%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=https://goo.gl/maps/ALZR6FJZU3kxVwN86">
+                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20<?= $user['male']['nama'] ?>%20and%20<?= $user['female']['nama'] ?>&details=The%20Wedding%20of%20<?= $user['male']['nama'] ?>%20and%20<?= $user['female']['nama'] ?>%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=<?= $user['female']['google_maps'] ?>">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
                 </a>
 
@@ -117,15 +133,15 @@
             </path>
         </svg>
 
-        <!-- Mempelai -->
-        <section class="dark-section" id="mempelai">
+        <!-- Bride -->
+        <section class="dark-section" id="bride">
 
             <div class="text-center">
-                <h1 class="font-esthetic py-4 px-2" style="font-size: 2rem">Assalamualaikum Warahmatullahi Wabarakatuh</h1>
+                <h1 class="font-esthetic py-4 px-2" style="font-size: 2rem">Assalamualaikum Warahmatullahi Wabarakatuh
+                </h1>
 
                 <p class="pb-3 px-3">
-                    Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat
-                    sekalian untuk menghadiri acara pernikahan kami:
+                    Tanpa memandang batasan rasa hormat, kami mengundang Bapa/Ibu/Saudara/Saudari serta keluarga untuk hadir di majlis perkahwinan kami:
                 </p>
 
                 <div class="overflow-x-hidden">
@@ -134,9 +150,9 @@
                         <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
                             <img src="./assets/images/cowo.png" alt="cowo" onclick="modalFoto(this)">
                         </div>
-                        <h1 class="font-esthetic" style="font-size: 3rem;">Wahyu Siapa</h1>
+                        <h1 class="font-esthetic" style="font-size: 3rem;"><?= $user['male']['nama'] ?></h1>
                         <h5 class="mt-3 mb-0">Putra</h5>
-                        <p class="mb-0">Bapak ... & Ibu ...</p>
+                        <p class="mb-0"><?= $user['male']['nama_ayah'] ?> & <?= $user['male']['nama_ibu'] ?></p>
                     </div>
 
                     <h1 class="font-esthetic my-4" style="font-size: 4rem;">&</h1>
@@ -145,9 +161,9 @@
                         <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
                             <img src="./assets/images/cewe.png" alt="cewe" onclick="modalFoto(this)">
                         </div>
-                        <h1 class="font-esthetic" style="font-size: 3rem;">Riski Siapa</h1>
+                        <h1 class="font-esthetic" style="font-size: 3rem;"><?= $user['female']['nama'] ?></h1>
                         <h5 class="mt-3 mb-0">Putri</h5>
-                        <p class="mb-0">Bapak ... & Ibu ...</p>
+                        <p class="mb-0"><?= $user['female']['nama_ayah'] ?> & <?= $user['female']['nama_ibu'] ?></p>
                     </div>
                 </div>
             </div>
@@ -168,10 +184,10 @@
                 </h1>
 
                 <p style="font-size: 0.9rem;" class="px-2">
-                    Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari
-                    jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu
-                    rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
-                    (kebesaran Allah) bagi kaum yang berpikir.
+                    Dijadikan-Nya diantaramu rasa kasih dan sayang
+                    Yakni rasa kasih sayang dan cinta antara suami dan istrinya di dalam ikatan pernikahan. Mereka
+                    saling berlemah lembut padahal sebelumnya mereka berdua tidak saling mengenal dan tidak saling
+                    mencintai.
                 </p>
 
                 <span class="mb-0"><strong>QS. Ar-Rum Ayat 21</strong></span>
@@ -184,28 +200,28 @@
             </path>
         </svg>
 
-        <!-- Tanggal -->
-        <section class="dark-section" id="tanggal">
+        <!-- Date -->
+        <section class="dark-section" id="date">
 
             <div class="container">
                 <div class="text-center">
 
-                    <h1 class="font-esthetic py-3" style="font-size: 2rem;">Waktu Menuju Acara</h1>
+                    <h1 class="font-esthetic py-3" style="font-size: 2rem;">Date Count Down</h1>
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
 
-                        <!-- Ganti waktunya pada data-waktu (sesuai format tersebut) -->
-                        <div class="row justify-content-center" data-waktu="2024-01-01 00:00:00" id="tampilan-waktu">
+                        <!-- Ganti waktunya pada data-time (sesuai format tersebut) -->
+                        <div class="row justify-content-center" data-time="2024-12-30 00:00:00" id="time-view">
                             <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
+                                <h2 class="d-inline m-0 p-0" id="day">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Day</small>
                             </div>
                             <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
+                                <h2 class="d-inline m-0 p-0" id="hour">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hour</small>
                             </div>
                             <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
+                                <h2 class="d-inline m-0 p-0" id="minute">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Minute</small>
                             </div>
                             <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
+                                <h2 class="d-inline m-0 p-0" id="second">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Second</small>
                             </div>
                         </div>
                     </div>
@@ -217,22 +233,26 @@
 
                     <div class="overflow-x-hidden">
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
-                            <h1 class="font-esthetic" style="font-size: 2rem;">Akad</h1>
-                            <p>Pukul 10.00 WIB - Selesai</p>
+                            <h1 class="font-esthetic" style="font-size: 2rem;">Marriage Agreement</h1>
+                            <p>
+                                <?= date('l, d F Y h:i a', strtotime('2024-12-30 10:00:00')) ?>
+                            </p>
                         </div>
 
                         <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
-                            <h1 class="font-esthetic" style="font-size: 2rem;">Resepsi</h1>
-                            <p>Pukul 13.00 WIB - Selesai</p>
+                            <h1 class="font-esthetic" style="font-size: 2rem;">Reception</h1>
+                            <p>
+                                <?= date('l, d F Y h:i a', strtotime('2024-12-30 13:00:00')) ?> - <?= date('h:i a', strtotime('2024-12-30 16:00:00')) ?>
+                            </p>
                         </div>
                     </div>
-
                     <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
-                        <a href="https://goo.gl/maps/ALZR6FJZU3kxVwN86" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
+                        <a href="<?= $user['female']['google_maps'] ?>" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
                             <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
                         </a>
                         <p class="mb-0 mt-1 mx-1 pb-4" style="font-size: 0.9rem;">
-                            RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191
+                            No 90, jln lebur kala,<br> kg manek urai baru <br>
+                            Kuala Krai, Kelantan
                         </p>
                     </div>
                 </div>
@@ -332,94 +352,29 @@
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
-                                <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" class="img-fluid rounded" width="150" alt="bni">
+                                <img src="assets/images/CIMB-Logo.png" class="img-fluid rounded" width="150" alt="cimg-logo">
 
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Rekening 123456789</p>
-                                <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Account 7623187664</p>
+                                <p class="card-text" style="font-size: 0.9rem;"><?= $user['male']['nama'] ?></p>
 
                                 <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Salin No. Rekening</button>
+                                <button class="btn btn-light btn-sm rounded-3" data-nomer="7623187664" onclick="salin(this)" autofocus>Salin No. Account</button>
                             </div>
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png" class="img-fluid rounded" width="150" alt="bri">
+                                <img src="assets/images/maybank-logo.png" class="img-fluid rounded" width="150" alt="maybank-logo">
 
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Rekening 123456789</p>
-                                <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Account 014404773910</p>
+                                <p class="card-text" style="font-size: 0.9rem;"><?= ucwords($user['male']['nama']) ?></p>
 
                                 <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Salin No. Rekening</button>
+                                <button class="btn btn-light btn-sm rounded-3" data-nomer="014404773910" onclick="salin(this)" autofocus>Salin No. Account</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Ucapan -->
-        <section class="m-0 p-0" id="ucapan">
-            <div class="container">
-
-                <div class="card-body border rounded-4 shadow p-3">
-                    <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
-                    <div class="mb-1" id="balasan"></div>
-
-                    <div class="mb-3">
-                        <label for="form-nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
-                        <select class="form-select shadow-sm" id="form-kehadiran">
-                            <option value="0" selected>Konfirmasi Kehadiran</option>
-                            <option value="1">Hadir</option>
-                            <option value="2">Berhalangan</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="form-pesan" class="form-label">Ucapan & Doa</label>
-                        <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
-                    </div>
-
-                    <div class="d-flex">
-                        <button class="flex-fill btn btn-danger btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.batal()" id="batal">
-                            Batal<i class="fa-solid fa-xmark ms-1"></i>
-                        </button>
-                        <button class="flex-fill btn btn-success btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.reply()" id="reply">
-                            Balas<i class="fa-solid fa-reply ms-1"></i>
-                        </button>
-                        <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.ubah()" id="ubah">
-                            Edit<i class="fa-solid fa-pen-to-square ms-1"></i>
-                        </button>
-                        <button class="flex-fill btn btn-primary btn-sm rounded-3 shadow m-1" onclick="comment.kirim()" id="kirim">
-                            Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan"></div>
-
-                <nav class="d-flex justify-content-center mb-0">
-                    <ul class="pagination">
-                        <li class="page-item disabled" id="previous">
-                            <button class="page-link" onclick="pagination.previous(this)" aria-label="Previous">
-                                <i class="fa-solid fa-circle-left me-1"></i>Sebelumnya
-                            </button>
-                        </li>
-                        <li class="page-item disabled">
-                            <span class="page-link" id="page">1</span>
-                        </li>
-                        <li class="page-item" id="next">
-                            <button class="page-link" onclick="pagination.next(this)" aria-label="Next">
-                                Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
 
         <!-- Wave Separator -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -434,22 +389,19 @@
             <div class="text-center">
 
                 <p style="font-size: 0.9rem;" class="pt-2 pb-1 px-2" data-aos="fade-up" data-aos-duration="1500">
-                    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak / Ibu / Saudara / i.
-                    berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
+                    Majlis perkahwinan kami tidak akan lengkap tanpa kehadiran anda. Mari sama-sama berkongsi
+                    kebahagiaan. Kawan tersayang! Saya tidak dapat melupakan awak pada hari perkahwinan saya. Saya
+                    sangat berharap anda akan memberi saya penghormatan untuk menghadiri majlis perkahwinan saya.
                 </p>
 
-                <h1 class="font-esthetic" data-aos="fade-up" data-aos-duration="2000">Wassalamualaikum Warahmatullahi Wabarakatuh</h1>
+                <h1 class="font-esthetic" data-aos="fade-up" data-aos-duration="2000">Wassalamualaikum Warahmatullahi
+                    Wabarakatuh</h1>
                 <hr class="mt-3 mb-2">
 
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto">
                         <small class="text-light">
-                            Build with<i class="fa-solid fa-heart mx-1"></i>Dewanakl
-                        </small>
-                    </div>
-                    <div class="col-auto">
-                        <small>
-                            <i class="fa-brands fa-github me-1"></i><a target="_blank" href="https://github.com/dewanakl/undangan">dewanakl</a>
+                            Design by <a target="_blank" href="https://www.instagram.com/shazwan_danial27/">Izwan Danial></a>
                         </small>
                     </div>
                 </div>
@@ -465,21 +417,21 @@
                 <h1 class="font-esthetic mb-4" style="font-size: 2.5rem;">The Wedding Of</h1>
 
                 <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
-                    <img src="./assets/images/bg.jpeg" alt="bg">
+                    <img src="./assets/images/bg.jpg" alt="bg">
                 </div>
 
-                <h1 class="font-esthetic my-4" style="font-size: 2.5rem;">Wahyu & Riski</h1>
+                <h1 class="font-esthetic my-4" style="font-size: 2.5rem;"><?= $user['male']['nama_panggilan'] ?> & <?= $user['female']['nama_panggilan'] ?></h1>
                 <div id="nama-tamu"></div>
 
                 <button type="button" class="btn btn-light shadow rounded-4 mt-4" onclick="buka()">
-                    <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
+                    <i class="fa-solid fa-envelope-open me-2"></i>Open Invitation
                 </button>
             </div>
         </div>
     </div>
 
     <!-- Audio Button -->
-    <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="play(this)" data-status="true" data-url="./assets/music/sound.mp3">
+    <button type="button" id="play-music" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="play(this)" data-status="true" data-url="./assets/music/sound.mp3">
         <i class="fa-solid fa-circle-pause"></i>
     </button>
 
@@ -498,7 +450,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-                        <img src="./assets/images/bg.jpeg" class="w-100" alt="foto" id="showModalFoto">
+                        <img src="./assets/images/bg.jpg" class="w-100" alt="foto" id="showModalFoto">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -514,7 +466,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js" integrity="sha256-XG5M9shcLLpu8ct5bVbu6lLVzLpfZChl+csxdyLVP18=" crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
-    <script src="./js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
